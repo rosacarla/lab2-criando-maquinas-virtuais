@@ -1,4 +1,4 @@
-# ☁️ MICROSOFT AZURE - LOCALIZANDO SERVIÇOS POR CATEGORIA  
+# ☁️ CRIANDO MÁQUINAS VIRTUAIS NO AZURE  
  
 <p align="center">
   <img src="https://i.postimg.cc/Gmxtwttm/azure-fundamentals.png" width="256">
@@ -7,42 +7,34 @@
 ---  
 ## ⏯️ INTRODUÇÃO  
 
-<p align='justify'>Neste laboratório inicial do bootcamp <i>Azure Essencials</i>, foi realizada uma navegação exploratória pelo portal <a href='https://portal.azure.com/'><i>Microsoft Azure</i></a>, que é disponibilizado a todos os usuários sem distinção. Essa prática tinha como 
- requisito obrigatório a criação de uma conta para utilização gratuita do <i>Azure</i> por 30 dias, cujas instruções foram passadas em
- módulo anterior ao laboratório. </p>  
+<p align='justify'>Neste laboratório do bootcamp <i>Azure Essencials</i>, foram abordadas questões referentes a Acordo de Nível de Serviço (SLA)  suas implicações na criação de recursos como máquinas virtuais no portal <a href='https://portal.azure.com/'><i>Microsoft Azure.</i></a>. Além disso, essa prática tinha como objetivo explorar a documentação relacionada aos tópicos tratados no laboratório.</p>  
 
 --- 
 ## 🗒️RESUMO DOS TÓPICOS:  
 
-<p align='justify'>- Pode ser bloqueada a criação de recursos com preço muito alto ou a seleção de determinadas regiões para quem usa conta do tipo <i>trial</i> 
-  (para experimentar o serviço gratuitamente).</p>
-<p align='justify'>- A personalização da conta pode ser feita com alterações das configurações do portal, como idioma, aparência e outras, conforme a 
-  preferência do usuário.</p>
-<p align='justify'>- Há um menu lateral à esquerda da página onde são listados os serviços do Azure por Categorias, por exemplo: IA, Machine Learning, Computação,
-  Contêiners, Bancos de Dados etc.</p>  
+<p align='justify'>- A Tabela de Acordo de Nível de Serviço (<i></i>Service Level Agreement</i> – SLA) mostra os percentuais de SLA e os tempos previstos para inatvidade do recurso ou serviço por semana, mês e ano. </p>    
 
-<img src='https://github.com/rosacarla/resumo-do-lab1-az900/blob/main/images/tela-computacao.png' width=880>  
+<img src='' width=880>   
 
-<p align='justify'>- Como exemplos de serviços, foram exploradas as categorias de Computação, Rede e Armazenamento, para conhecer as listas de opções
-  de recursos de cada uma.</p>  
+<p align='justify'>- Ao criar um recurso que já obedece SLA, por ser nativo no Azure, se este ficar indisponível por mais tempo do que a previsão da tabela de SLA, a Microsoft deve ressarcir ao cliente. Entretanto, não há ressarcimento para indisponibilidade de máquina virtual criada por cliente, porque o SLA é criado a partir da requisição do cliente.</p>  
 
-  <img src='https://github.com/rosacarla/resumo-do-lab1-az900/blob/main/images/tela-rede.png' width=880>  
+<p align='justify'>- É importante saber qual o tempo de inatividade aceitável do serviço ou recurso antes de criar uma arquitetura de estruturas na nuvem.</p>  
+
+<img src='' width=880>  
+
+<p align='justify'>- Na comparação entre recursos com 99% e 99,99% de SLA existe uma diferença grande no tempo de indisponibilidade, porque vai de 1,68 hora para 1,01 minuto. Há menor tempo de indisponibilidade quanto mais 9 houver no percentual do SLA e, quanto menos 9 houver no percentual de SLA, mais tempo de indisponibilidade terá o recurso/serviço.</p>  
+
+  <img src='' width=880>  
   
-<p align='justify'>- Na categoria Redes, foi destacado o serviço <i>Bastions</i> (ou Bastião), como uma rede segura para configurar o acesso à internet para máquinas
-  virtuais; funciona como um <i>jump server</i>, ou seja, um servidor usado como ponte para conectar outras máquinas. Esse termo técnico equivale a 
-  <i>jumpbox</i> ou <i>host</i> administrativo seguro, e é um computador em uma rede tipicamente utilizada para administrar dispositivos em uma área de segurança
-  separada <a src='https://pt.wikipedia.org/wiki/Jump_server'>(Wikipedia)</a>.</p>  
+<p align='justify'>- Na tela de configuração de VM, os nomes dos campos oferecem uma janela com resumo sobre o item ou ainda um link para consultar na documentação a explicação sobre cada item do formulário a ser preenchido.</p>  
 
-  <img src='https://github.com/rosacarla/resumo-do-lab1-az900/blob/main/images/tela-armazenamento.png' width=880>  
+  <img src='' width=880>  
   
-<p align='justify'>- Existe possíbilidade de criar <i>firewall</i> na nuvem, o que é bastante necessário e recomendável.</p>
-<p align='justify'>- Alguns serviços estão sinalizados com a tag “VERSÃO PRÉVIA”, porque está no início de sua disponibilização, ainda não têm garantia de 
-  que será mantido, estão em teste pelos clientes, inclusive podem ser retirados, conforme os resultados das avaliações. Nessas condições, o serviço não 
-  tem ainda SLA (<i>Service Level Agreement</i> ou Acordo de Nível de Serviço).</p>
-<p align='justify'>- A Microsoft não se reponsabiliza pela queda de serviços que usam recursos em produção ou VERSÃO PRÉVIA, por isso não há como reclamar, 
-  porque o risco é de quem decidiu usar o recurso sem SLA.</p>
-<p align='justify'>- A computação em nuvem é um conhecimento essencial a qualquer profissional de TI para lidar, por exemplo, com a necessidade básica de 
-  sincronizar arquivos com a nuvem. No mwrcado de trabalho, essa habilidade é esperada de desenvolvedores que trabalham com IA, banco de dados, computação e outros.</p>  
+<p align='justify'>- Quanto à vinculação do SLA a opções escolhidas para criação de recursos, um exemplo é a opção selecionada para a zona de disponibilidade da VM, que envolve a escolha de um SLA específico. </p>  
+
+<p align='justify'>- O mesmo vale para a criação de conta de armazenamento. Quando é selecionada a opção de redundância, há replicação do dado entre data centers e regiões. Quanto mais se replica um recurso, há menos tempo de indisponibilidade, por ter o mesmo dado disponível em mais de um lugar ao mesmo tempo, o que, por outro lado, ajuda na recuperação dos dados em caso de situações extremas, como catástrofes.</p>  
+
+<p align='justify'>- Como há preços fixados para cobrança pelo uso do serviço na nuvem, é importante saber a finalidade real da requisição, se é para produção, teste, só saber como funciona, porque é preciso ter um orçamento pré-definido.</p>  
 
 ---  
 ## ✍️ AUTORA    
@@ -60,11 +52,8 @@ Contato: rosa.carla@pucpr.edu.br
 
 ## 🔗 LINKS ÚTEIS  
 
-- [Documentação do Azure](https://learn.microsoft.com/pt-br/azure/?product=popular)
-- [Introdução a Cloud Azure , você precisa saber tudo antes de começar: será mesmo?](https://youtu.be/bm48pmuL5sI?si=w1cnj7fRmjhn2pJ4)
-- [Azure (A plataforma Cloud da Microsoft) // Dicionário do Programador](https://youtu.be/YgE-sZaCuJ0?si=JPaKS103vlrxxqJR)
-- [Computação em Nuvem em 2030 (Cloud Computing) // Decode CDF 2030](https://youtu.be/_dXAnBzfwBU?si=J-xH6HmW7dtXB2zg)
-  
+- [Recomendações para definir metas de confiabilidade](https://learn.microsoft.com/pt-br/azure/well-architected/reliability/metrics)
+- [Opções de disponibilidade para Máquinas Virtuais do Azure](https://learn.microsoft.com/pt-br/azure/virtual-machines/availability)
 
 ---  
 
